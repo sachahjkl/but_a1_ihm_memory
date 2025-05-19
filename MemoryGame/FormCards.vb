@@ -19,6 +19,8 @@ Public Class FormCards
 
     Private randomizedCardImages(CARD_NUMBER - 1) As Image
 
+    Private cts As CancellationTokenSource
+
     Private Function createRandomizedCardImages()
         Dim randomizedCards(CARD_NUMBER - 1) As Image
         Dim groupSize As Integer = randomizedCards.Length \ cardImages.Length
@@ -74,7 +76,7 @@ Public Class FormCards
         End If
     End Sub
 
-    Private Sub PictureBox_Click(sender As Object, e As EventArgs)
+    Private Async Sub PictureBox_Click(sender As Object, e As EventArgs)
         If Not timerTpsRestant.Enabled Then
             timerTpsRestant.Enabled = True
             timerTpsRestant.Start()
@@ -87,16 +89,23 @@ Public Class FormCards
             Return
         End If
 
-        showCard(clickedCard)
-        Dim cts As New CancellationTokenSource()
-        cts.Cancel()
-        If cardIsSameAsShownCards(clickedCard) Then
+        cts?.Cancel()
+        cts = New CancellationTokenSource()
+
+        If Not cardIsSameAsShownCards(clickedCard) Then
             showCard(clickedCard)
-        Else
+            Try
+                Await Task.Delay(WAIT_TIME_MS, cts.Token)
+            Catch ex As OperationCanceledException
+            End Try
+
             hideAllCards()
+            Return
         End If
 
-        If shownCardsCount() = 4 Then
+        showCard(clickedCard)
+
+        If shownCardsCount() = MAXIMUM_CARDS_SHOWN Then
             For Each pb In pictureBoxes
                 If Not isCardHidden(pb) And pb.Enabled Then
                     pb.Image = ToolStripRenderer.CreateDisabledImage(New Bitmap(pb.Image))
