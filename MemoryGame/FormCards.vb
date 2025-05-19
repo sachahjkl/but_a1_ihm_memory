@@ -91,6 +91,9 @@ Public Class FormCards
 
         cts?.Cancel()
         cts = New CancellationTokenSource()
+        If cardIsSameAsShownCards(clickedCard) Then
+            showCard(clickedCard)
+        End If
 
         If Not cardIsSameAsShownCards(clickedCard) Then
             showCard(clickedCard)
@@ -98,7 +101,6 @@ Public Class FormCards
                 Await Task.Delay(WAIT_TIME_MS, cts.Token)
             Catch ex As OperationCanceledException
             End Try
-
             hideAllCards()
             Return
         End If
@@ -113,6 +115,7 @@ Public Class FormCards
                 End If
             Next
         End If
+
         If gameIsFinished() Then
             timerTpsRestant.Stop()
             If MsgBox("Vous avez gagné ! Temps restant : " & tpsRestant.ToString & " secondes", MsgBoxStyle.OkOnly
@@ -133,7 +136,8 @@ Public Class FormCards
     End Function
 
     Private Function cardIsSameAsShownCards(clickedCard As PictureBox) As Boolean
-        Dim cardImage = clickedCard.Image
+        Dim index = Array.IndexOf(pictureBoxes, clickedCard)
+        Dim cardImage = randomizedCardImages(index)
         For Each pb In pictureBoxes
             If (Not isCardHidden(pb) And pb.Enabled) And pb.Image IsNot cardImage Then
                 Return False
@@ -220,5 +224,21 @@ Public Class FormCards
             Return 1.5
         End If
         Return -1
+    End Function
+
+    Function CompareExact(img1 As Bitmap, img2 As Bitmap) As Boolean
+        If img1.Width <> img2.Width OrElse img1.Height <> img2.Height Then
+            Return False
+        End If
+
+        For x As Integer = 0 To img1.Width - 1
+            For y As Integer = 0 To img1.Height - 1
+                If img1.GetPixel(x, y) <> img2.GetPixel(x, y) Then
+                    Return False
+                End If
+            Next
+        Next
+
+        Return True
     End Function
 End Class

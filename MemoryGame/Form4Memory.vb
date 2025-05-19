@@ -47,6 +47,6 @@ Public Class Form4Memory
     End Sub
 
     Private Sub btnScores_Click(sender As Object, e As EventArgs) Handles btnScores.Click
-        FormPodium.ShowDialog()
+        FormScores.ShowDialog()
     End Sub
 End Class

@@ -94,7 +94,7 @@ Partial Class Form4Memory
         Me.btnScores.Name = "btnScores"
         Me.btnScores.Size = New System.Drawing.Size(75, 23)
         Me.btnScores.TabIndex = 6
-        Me.btnScores.Text = "Scores"
+        Me.btnScores.Text = "Podium"
         Me.btnScores.UseVisualStyleBackColor = True
         '
         'btnQuitter
