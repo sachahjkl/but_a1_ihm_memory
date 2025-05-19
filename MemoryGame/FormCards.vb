@@ -184,10 +184,10 @@ Public Class FormCards
         ElseIf rbBrainrot.Checked Then
             cardImages = {
                 Image.FromFile("assets/cards_brainrot/CardBC.png"),
-                Image.FromFile("assets/cards_brainrot/CardBC.png"),
-                Image.FromFile("assets/cards_brainrot/CardBC.png"),
-                Image.FromFile("assets/cards_brainrot/CardBC.png"),
-                Image.FromFile("assets/cards_brainrot/CardBC.png")}
+                Image.FromFile("assets/cards_brainrot/CardBP.png"),
+                Image.FromFile("assets/cards_brainrot/CardCP.png"),
+                Image.FromFile("assets/cards_brainrot/CardTS.png"),
+                Image.FromFile("assets/cards_brainrot/CardTT.png")}
         End If
 
         For Each pb In pictureBoxes

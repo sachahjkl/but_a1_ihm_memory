@@ -153,6 +153,7 @@ Partial Class FormCards
         Me.PictureBox20.Location = New System.Drawing.Point(387, 396)
         Me.PictureBox20.Name = "PictureBox20"
         Me.PictureBox20.Size = New System.Drawing.Size(90, 125)
+        Me.PictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox20.TabIndex = 19
         Me.PictureBox20.TabStop = False
         '
@@ -161,6 +162,7 @@ Partial Class FormCards
         Me.PictureBox15.Location = New System.Drawing.Point(387, 265)
         Me.PictureBox15.Name = "PictureBox15"
         Me.PictureBox15.Size = New System.Drawing.Size(90, 125)
+        Me.PictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox15.TabIndex = 18
         Me.PictureBox15.TabStop = False
         '
@@ -169,6 +171,7 @@ Partial Class FormCards
         Me.PictureBox10.Location = New System.Drawing.Point(387, 134)
         Me.PictureBox10.Name = "PictureBox10"
         Me.PictureBox10.Size = New System.Drawing.Size(90, 125)
+        Me.PictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox10.TabIndex = 17
         Me.PictureBox10.TabStop = False
         '
@@ -177,6 +180,7 @@ Partial Class FormCards
         Me.PictureBox5.Location = New System.Drawing.Point(387, 3)
         Me.PictureBox5.Name = "PictureBox5"
         Me.PictureBox5.Size = New System.Drawing.Size(90, 125)
+        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox5.TabIndex = 16
         Me.PictureBox5.TabStop = False
         '
@@ -185,6 +189,7 @@ Partial Class FormCards
         Me.PictureBox19.Location = New System.Drawing.Point(291, 396)
         Me.PictureBox19.Name = "PictureBox19"
         Me.PictureBox19.Size = New System.Drawing.Size(90, 125)
+        Me.PictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox19.TabIndex = 15
         Me.PictureBox19.TabStop = False
         '
@@ -193,6 +198,7 @@ Partial Class FormCards
         Me.PictureBox18.Location = New System.Drawing.Point(195, 396)
         Me.PictureBox18.Name = "PictureBox18"
         Me.PictureBox18.Size = New System.Drawing.Size(90, 125)
+        Me.PictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox18.TabIndex = 14
         Me.PictureBox18.TabStop = False
         '
@@ -201,6 +207,7 @@ Partial Class FormCards
         Me.PictureBox17.Location = New System.Drawing.Point(99, 396)
         Me.PictureBox17.Name = "PictureBox17"
         Me.PictureBox17.Size = New System.Drawing.Size(90, 125)
+        Me.PictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox17.TabIndex = 13
         Me.PictureBox17.TabStop = False
         '
@@ -209,6 +216,7 @@ Partial Class FormCards
         Me.PictureBox16.Location = New System.Drawing.Point(3, 396)
         Me.PictureBox16.Name = "PictureBox16"
         Me.PictureBox16.Size = New System.Drawing.Size(90, 125)
+        Me.PictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox16.TabIndex = 12
         Me.PictureBox16.TabStop = False
         '
@@ -217,6 +225,7 @@ Partial Class FormCards
         Me.PictureBox14.Location = New System.Drawing.Point(291, 265)
         Me.PictureBox14.Name = "PictureBox14"
         Me.PictureBox14.Size = New System.Drawing.Size(90, 125)
+        Me.PictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox14.TabIndex = 11
         Me.PictureBox14.TabStop = False
         '
@@ -225,6 +234,7 @@ Partial Class FormCards
         Me.PictureBox13.Location = New System.Drawing.Point(195, 265)
         Me.PictureBox13.Name = "PictureBox13"
         Me.PictureBox13.Size = New System.Drawing.Size(90, 125)
+        Me.PictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox13.TabIndex = 10
         Me.PictureBox13.TabStop = False
         '
@@ -233,6 +243,7 @@ Partial Class FormCards
         Me.PictureBox12.Location = New System.Drawing.Point(99, 265)
         Me.PictureBox12.Name = "PictureBox12"
         Me.PictureBox12.Size = New System.Drawing.Size(90, 125)
+        Me.PictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox12.TabIndex = 9
         Me.PictureBox12.TabStop = False
         '
@@ -241,6 +252,7 @@ Partial Class FormCards
         Me.PictureBox11.Location = New System.Drawing.Point(3, 265)
         Me.PictureBox11.Name = "PictureBox11"
         Me.PictureBox11.Size = New System.Drawing.Size(90, 125)
+        Me.PictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox11.TabIndex = 8
         Me.PictureBox11.TabStop = False
         '
@@ -249,6 +261,7 @@ Partial Class FormCards
         Me.PictureBox9.Location = New System.Drawing.Point(291, 134)
         Me.PictureBox9.Name = "PictureBox9"
         Me.PictureBox9.Size = New System.Drawing.Size(90, 125)
+        Me.PictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox9.TabIndex = 7
         Me.PictureBox9.TabStop = False
         '
@@ -257,6 +270,7 @@ Partial Class FormCards
         Me.PictureBox8.Location = New System.Drawing.Point(195, 134)
         Me.PictureBox8.Name = "PictureBox8"
         Me.PictureBox8.Size = New System.Drawing.Size(90, 125)
+        Me.PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox8.TabIndex = 6
         Me.PictureBox8.TabStop = False
         '
@@ -265,6 +279,7 @@ Partial Class FormCards
         Me.PictureBox7.Location = New System.Drawing.Point(99, 134)
         Me.PictureBox7.Name = "PictureBox7"
         Me.PictureBox7.Size = New System.Drawing.Size(90, 125)
+        Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox7.TabIndex = 5
         Me.PictureBox7.TabStop = False
         '
@@ -273,6 +288,7 @@ Partial Class FormCards
         Me.PictureBox6.Location = New System.Drawing.Point(3, 134)
         Me.PictureBox6.Name = "PictureBox6"
         Me.PictureBox6.Size = New System.Drawing.Size(90, 125)
+        Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox6.TabIndex = 4
         Me.PictureBox6.TabStop = False
         '
@@ -281,6 +297,7 @@ Partial Class FormCards
         Me.PictureBox4.Location = New System.Drawing.Point(291, 3)
         Me.PictureBox4.Name = "PictureBox4"
         Me.PictureBox4.Size = New System.Drawing.Size(90, 125)
+        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox4.TabIndex = 3
         Me.PictureBox4.TabStop = False
         '
@@ -289,6 +306,7 @@ Partial Class FormCards
         Me.PictureBox3.Location = New System.Drawing.Point(195, 3)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(90, 125)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox3.TabIndex = 2
         Me.PictureBox3.TabStop = False
         '
@@ -297,6 +315,7 @@ Partial Class FormCards
         Me.PictureBox2.Location = New System.Drawing.Point(99, 3)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(90, 125)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox2.TabIndex = 1
         Me.PictureBox2.TabStop = False
         '
@@ -305,6 +324,7 @@ Partial Class FormCards
         Me.PictureBox1.Location = New System.Drawing.Point(3, 3)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(90, 125)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
