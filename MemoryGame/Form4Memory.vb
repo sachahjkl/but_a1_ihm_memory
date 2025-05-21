@@ -7,10 +7,9 @@ Public Class Form4Memory
         Return cbNom.Text.Trim().Length >= NAME_MINIMUM_LENGTH
     End Function
     Private Sub btnJouer_Click(sender As Object, e As EventArgs) Handles btnJouer.Click
-        Dim value = cbNom.Text.Trim()
-        If Not Settings.RecentUsers.Contains(value) Then
-            Settings.RecentUsers.Add(value)
-            cbNom.Items.Add(value)
+        Dim name = cbNom.Text.Trim()
+        If Not MyPlayers.Instance.PlayerNames.Contains(name) Then
+            MyPlayers.Instance.addPlayer(name)
         End If
         Me.Hide()
         FormCards.Show()
@@ -18,23 +17,14 @@ Public Class Form4Memory
 
     Private Sub btnQuitter_Click(sender As Object, e As EventArgs) Handles btnQuitter.Click
         If MsgBox("Voulez vous vraiment quitter ?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
-            Settings.Save()
             Close()
         End If
     End Sub
 
-    Private Settings As MySettings
 
-    Public Sub New()
-        ' Cet appel est requis par le concepteur.
-        InitializeComponent()
-
-        ' Ajoutez une initialisation quelconque après l'appel InitializeComponent().
-        Settings = New MySettings()
-    End Sub
 
     Private Sub Form4Memory_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        cbNom.Items.AddRange(Settings.RecentUsers.OfType(Of String).ToArray())
+        cbNom.Items.AddRange(MyPlayers.Instance.PlayerNames.OfType(Of String).ToArray())
         btnJouer.Enabled = CheckNom()
     End Sub
 

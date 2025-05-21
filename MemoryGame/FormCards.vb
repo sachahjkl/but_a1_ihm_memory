@@ -5,7 +5,7 @@ Public Class FormCards
     Private Const INTERVAL = 1000
     Private Const MAXIMUM_CARDS_SHOWN = 4
     Private Const WAIT_TIME_MS = 1500
-    Private Const CARD_NUMBER = 20
+    Friend Const CARD_NUMBER = 20
     Private Const IMAGE_NUMBER = 5
 
     Private totalTime = TOTAL_TIME * getTotalTimeMult()
@@ -20,6 +20,10 @@ Public Class FormCards
     Private randomizedCardImages(CARD_NUMBER - 1) As Image
 
     Private cts As CancellationTokenSource
+    Private playerName As String = Form4Memory.cbNom.Text
+    Private playerScore As Integer = 0
+    Private playerTime As Integer = 0
+
 
     Private Function createRandomizedCardImages()
         Dim randomizedCards(CARD_NUMBER - 1) As Image
@@ -57,7 +61,8 @@ Public Class FormCards
             AddHandler pb.Click, AddressOf PictureBox_Click
         Next
 
-        labelJoueur.Text = Form4Memory.cbNom.Text
+        labelJoueur.Text = playerName
+
         loadImages()
         randomizedCardImages = createRandomizedCardImages()
 
@@ -66,10 +71,12 @@ Public Class FormCards
     Private Sub updateTimeLeft(sender As Object, e As EventArgs) Handles timerTpsRestant.Tick
         If tpsRestant > 0 Then
             tpsRestant -= 1
+            playerTime += 1
             labelTpsRestant.Text = tpsRestant.ToString() & " secondes"
         Else
             timerTpsRestant.Stop()
             If MsgBox("Temps écoulé, vous avez perdu !", MsgBoxStyle.OkOnly) = MsgBoxResult.Ok Then
+                MyPlayers.Instance.updatePlayer(playerName, playerTime, playerScore)
                 Me.Hide()
                 Form4Memory.Show()
             End If
@@ -114,19 +121,19 @@ Public Class FormCards
                     pb.Enabled = False
                 End If
             Next
+            playerScore += MAXIMUM_CARDS_SHOWN
         End If
 
-        If gameIsFinished() Then
+        If gameIsWon() Then
             timerTpsRestant.Stop()
-            If MsgBox("Vous avez gagné ! Temps restant : " & tpsRestant.ToString & " secondes", MsgBoxStyle.OkOnly
-                      ) = MsgBoxResult.Ok Then
-                Form4Memory.Show()
-                Me.Close()
-            End If
+            MsgBox("Vous avez gagné ! Temps restant : " & tpsRestant.ToString & " secondes", MsgBoxStyle.OkOnly)
+            MyPlayers.Instance.updatePlayer(playerName, playerTime, playerScore)
+            Form4Memory.Show()
+            Me.Close()
         End If
     End Sub
 
-    Private Function gameIsFinished() As Boolean
+    Private Function gameIsWon() As Boolean
         For Each pb In pictureBoxes
             If pb.Enabled Then
                 Return False
@@ -148,6 +155,7 @@ Public Class FormCards
 
     Private Sub btnAbandon_Click(sender As Object, e As EventArgs) Handles btnAbandon.Click
         If MsgBox("Voulez vous vraiment quitter ?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+            MyPlayers.Instance.updatePlayer(playerName, playerTime, playerScore)
             Me.Close()
             Form4Memory.Show()
         End If
