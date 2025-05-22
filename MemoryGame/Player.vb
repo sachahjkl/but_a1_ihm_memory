@@ -7,6 +7,7 @@ Public Class Player
     Private _timePlayed As Integer
 
     Public Sub New()
+        _bestTime = 0
         _gamesPlayed = 0
         _timePlayed = 0
     End Sub
