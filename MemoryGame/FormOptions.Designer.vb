@@ -23,46 +23,46 @@ Partial Class FormOptions
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormOptions))
-        Me.rbAlice = New System.Windows.Forms.RadioButton()
-        Me.rbBrainrot = New System.Windows.Forms.RadioButton()
+        Me.rbBalatro = New System.Windows.Forms.RadioButton()
+        Me.rbSkyrim = New System.Windows.Forms.RadioButton()
         Me.gbCartes = New System.Windows.Forms.GroupBox()
         Me.btnRetour = New System.Windows.Forms.Button()
         Me.gbTemps = New System.Windows.Forms.GroupBox()
-        Me.rb30 = New System.Windows.Forms.RadioButton()
-        Me.rb60 = New System.Windows.Forms.RadioButton()
         Me.rb90 = New System.Windows.Forms.RadioButton()
+        Me.rb60 = New System.Windows.Forms.RadioButton()
+        Me.rb30 = New System.Windows.Forms.RadioButton()
         Me.gbCartes.SuspendLayout()
         Me.gbTemps.SuspendLayout()
         Me.SuspendLayout()
         '
-        'rbAlice
+        'rbBalatro
         '
-        Me.rbAlice.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.rbAlice.AutoSize = True
-        Me.rbAlice.Checked = True
-        Me.rbAlice.Location = New System.Drawing.Point(6, 19)
-        Me.rbAlice.Name = "rbAlice"
-        Me.rbAlice.Size = New System.Drawing.Size(252, 17)
-        Me.rbAlice.TabIndex = 0
-        Me.rbAlice.TabStop = True
-        Me.rbAlice.Text = "Cartes Alice aux pays des merveilles (par défaut)"
-        Me.rbAlice.UseVisualStyleBackColor = True
+        Me.rbBalatro.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.rbBalatro.AutoSize = True
+        Me.rbBalatro.Checked = True
+        Me.rbBalatro.Location = New System.Drawing.Point(6, 19)
+        Me.rbBalatro.Name = "rbBalatro"
+        Me.rbBalatro.Size = New System.Drawing.Size(91, 17)
+        Me.rbBalatro.TabIndex = 0
+        Me.rbBalatro.TabStop = True
+        Me.rbBalatro.Text = "Cartes Balatro"
+        Me.rbBalatro.UseVisualStyleBackColor = True
         '
-        'rbBrainrot
+        'rbSkyrim
         '
-        Me.rbBrainrot.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.rbBrainrot.AutoSize = True
-        Me.rbBrainrot.Location = New System.Drawing.Point(6, 42)
-        Me.rbBrainrot.Name = "rbBrainrot"
-        Me.rbBrainrot.Size = New System.Drawing.Size(94, 17)
-        Me.rbBrainrot.TabIndex = 1
-        Me.rbBrainrot.Text = "Cartes Brainrot"
-        Me.rbBrainrot.UseVisualStyleBackColor = True
+        Me.rbSkyrim.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.rbSkyrim.AutoSize = True
+        Me.rbSkyrim.Location = New System.Drawing.Point(6, 42)
+        Me.rbSkyrim.Name = "rbSkyrim"
+        Me.rbSkyrim.Size = New System.Drawing.Size(89, 17)
+        Me.rbSkyrim.TabIndex = 1
+        Me.rbSkyrim.Text = "Cartes Skyrim"
+        Me.rbSkyrim.UseVisualStyleBackColor = True
         '
         'gbCartes
         '
-        Me.gbCartes.Controls.Add(Me.rbAlice)
-        Me.gbCartes.Controls.Add(Me.rbBrainrot)
+        Me.gbCartes.Controls.Add(Me.rbBalatro)
+        Me.gbCartes.Controls.Add(Me.rbSkyrim)
         Me.gbCartes.Location = New System.Drawing.Point(12, 12)
         Me.gbCartes.Name = "gbCartes"
         Me.gbCartes.Size = New System.Drawing.Size(311, 105)
@@ -91,15 +91,15 @@ Partial Class FormOptions
         Me.gbTemps.TabStop = False
         Me.gbTemps.Text = "Choix du temps"
         '
-        'rb30
+        'rb90
         '
-        Me.rb30.AutoSize = True
-        Me.rb30.Location = New System.Drawing.Point(7, 20)
-        Me.rb30.Name = "rb30"
-        Me.rb30.Size = New System.Drawing.Size(127, 17)
-        Me.rb30.TabIndex = 0
-        Me.rb30.Text = "30 secondes (difficile)"
-        Me.rb30.UseVisualStyleBackColor = True
+        Me.rb90.AutoSize = True
+        Me.rb90.Location = New System.Drawing.Point(6, 66)
+        Me.rb90.Name = "rb90"
+        Me.rb90.Size = New System.Drawing.Size(120, 17)
+        Me.rb90.TabIndex = 2
+        Me.rb90.Text = "90 secondes (facile)"
+        Me.rb90.UseVisualStyleBackColor = True
         '
         'rb60
         '
@@ -113,15 +113,15 @@ Partial Class FormOptions
         Me.rb60.Text = "60 secondes (par défaut)"
         Me.rb60.UseVisualStyleBackColor = True
         '
-        'rb90
+        'rb30
         '
-        Me.rb90.AutoSize = True
-        Me.rb90.Location = New System.Drawing.Point(6, 66)
-        Me.rb90.Name = "rb90"
-        Me.rb90.Size = New System.Drawing.Size(120, 17)
-        Me.rb90.TabIndex = 2
-        Me.rb90.Text = "90 secondes (facile)"
-        Me.rb90.UseVisualStyleBackColor = True
+        Me.rb30.AutoSize = True
+        Me.rb30.Location = New System.Drawing.Point(7, 20)
+        Me.rb30.Name = "rb30"
+        Me.rb30.Size = New System.Drawing.Size(127, 17)
+        Me.rb30.TabIndex = 0
+        Me.rb30.Text = "30 secondes (difficile)"
+        Me.rb30.UseVisualStyleBackColor = True
         '
         'FormOptions
         '
@@ -145,8 +145,8 @@ Partial Class FormOptions
 
     End Sub
 
-    Friend WithEvents rbAlice As RadioButton
-    Friend WithEvents rbBrainrot As RadioButton
+    Friend WithEvents rbBalatro As RadioButton
+    Friend WithEvents rbSkyrim As RadioButton
     Friend WithEvents gbCartes As GroupBox
     Friend WithEvents btnRetour As Button
     Friend WithEvents gbTemps As GroupBox

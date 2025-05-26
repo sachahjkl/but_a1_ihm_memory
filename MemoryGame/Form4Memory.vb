@@ -11,7 +11,7 @@ Public Class Form4Memory
         If Not MyPlayers.Instance.PlayerNames.Contains(name) Then
             MyPlayers.Instance.addPlayer(name)
         End If
-        Me.Hide()
+        Hide()
         FormCards.Show()
     End Sub
 
@@ -23,10 +23,13 @@ Public Class Form4Memory
 
 
 
-    Private Sub Form4Memory_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub Form4Memory_Load(sender As Object, e As EventArgs) Handles MyBase.Activated
+        cbNom.Items.Clear()
         cbNom.Items.AddRange(MyPlayers.Instance.PlayerNames.OfType(Of String).ToArray())
         btnJouer.Enabled = CheckNom()
     End Sub
+
+
 
     Private Sub tbNom_TextChanged(sender As Object, e As EventArgs) Handles cbNom.TextChanged
         btnJouer.Enabled = CheckNom()
@@ -39,4 +42,6 @@ Public Class Form4Memory
     Private Sub btnScores_Click(sender As Object, e As EventArgs) Handles btnScores.Click
         FormScores.ShowDialog()
     End Sub
+
+
 End Class

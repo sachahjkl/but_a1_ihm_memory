@@ -12,6 +12,7 @@ Public Class FormCards
 
     Private WithEvents timerTpsRestant As New Windows.Forms.Timer()
     Private tpsRestant As Integer = totalTime
+    Private tpsRestantDepuisCarre As Integer = tpsRestant
 
     Private pictureBoxes() As PictureBox
     Private backCardImage As Image
@@ -75,7 +76,7 @@ Public Class FormCards
             labelTpsRestant.Text = tpsRestant.ToString() & " secondes"
         Else
             timerTpsRestant.Stop()
-            If MsgBox("Temps écoulé, vous avez perdu !", MsgBoxStyle.OkOnly) = MsgBoxResult.Ok Then
+            If MsgBox("Temps écoulé, vous avez perdu ! " & playerScore / MAXIMUM_CARDS_SHOWN & " carré(s) en " & tpsRestantDepuisCarre & " secondes.", MsgBoxStyle.OkOnly) = MsgBoxResult.Ok Then
                 MyPlayers.Instance.updatePlayer(playerName, playerTime, playerScore)
                 Me.Hide()
                 Form4Memory.Show()
@@ -122,6 +123,7 @@ Public Class FormCards
                 End If
             Next
             playerScore += MAXIMUM_CARDS_SHOWN
+            tpsRestantDepuisCarre = tpsRestant
         End If
 
         If gameIsWon() Then
@@ -155,6 +157,7 @@ Public Class FormCards
 
     Private Sub btnAbandon_Click(sender As Object, e As EventArgs) Handles btnAbandon.Click
         If MsgBox("Voulez vous vraiment quitter ?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+            timerTpsRestant.Stop()
             MyPlayers.Instance.updatePlayer(playerName, playerTime, playerScore)
             Me.Close()
             Form4Memory.Show()
@@ -190,25 +193,26 @@ Public Class FormCards
     End Sub
 
     Private Sub loadImages()
-        Dim rbAlice = FormOptions.rbAlice
-        Dim rbBrainrot = FormOptions.rbBrainrot
-        backCardImage = Image.FromFile("assets/BackCard.png")
+        Dim rbBalatro = FormOptions.rbBalatro
+        Dim rbSkyrim = FormOptions.rbSkyrim
 
-        If rbAlice.Checked Then
+        If rbBalatro.Checked Then
+            backCardImage = Image.FromFile("assets/cards_balatro/BackCard.png")
             cardImages = {
-                Image.FromFile("assets/cards_alice/Card0.png"),
-                Image.FromFile("assets/cards_alice/Card1.png"),
-                Image.FromFile("assets/cards_alice/Card2.png"),
-                Image.FromFile("assets/cards_alice/Card3.png"),
-                Image.FromFile("assets/cards_alice/Card4.png")
+                Image.FromFile("assets/cards_balatro/Card01.png"),
+                Image.FromFile("assets/cards_balatro/Card02.png"),
+                Image.FromFile("assets/cards_balatro/Card03.png"),
+                Image.FromFile("assets/cards_balatro/Card04.png"),
+                Image.FromFile("assets/cards_balatro/Card05.png")
             }
-        ElseIf rbBrainrot.Checked Then
+        ElseIf rbSkyrim.Checked Then
+            backCardImage = Image.FromFile("assets/cards_skyrim/BackCard.png")
             cardImages = {
-                Image.FromFile("assets/cards_brainrot/CardBC.png"),
-                Image.FromFile("assets/cards_brainrot/CardBP.png"),
-                Image.FromFile("assets/cards_brainrot/CardCP.png"),
-                Image.FromFile("assets/cards_brainrot/CardTS.png"),
-                Image.FromFile("assets/cards_brainrot/CardTT.png")}
+                Image.FromFile("assets/cards_skyrim/Card01.png"),
+                Image.FromFile("assets/cards_skyrim/Card02.png"),
+                Image.FromFile("assets/cards_skyrim/Card03.png"),
+                Image.FromFile("assets/cards_skyrim/Card04.png"),
+                Image.FromFile("assets/cards_skyrim/Card05.png")}
         End If
 
         For Each pb In pictureBoxes

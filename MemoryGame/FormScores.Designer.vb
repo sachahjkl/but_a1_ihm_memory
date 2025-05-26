@@ -24,87 +24,91 @@ Partial Class FormScores
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormScores))
         Me.btnRetour = New System.Windows.Forms.Button()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.cbJoueurSelectionne = New System.Windows.Forms.ComboBox()
+        Me.lbJoueurs = New System.Windows.Forms.ListBox()
+        Me.btnStats = New System.Windows.Forms.Button()
+        Me.btnCroissant = New System.Windows.Forms.Button()
+        Me.btnDecroissant = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnRetour
         '
-        Me.btnRetour.Location = New System.Drawing.Point(895, 557)
+        Me.btnRetour.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnRetour.Location = New System.Drawing.Point(245, 449)
         Me.btnRetour.Name = "btnRetour"
         Me.btnRetour.Size = New System.Drawing.Size(75, 23)
         Me.btnRetour.TabIndex = 0
         Me.btnRetour.Text = "Retour"
         Me.btnRetour.UseVisualStyleBackColor = True
         '
-        'PictureBox1
+        'cbJoueurSelectionne
         '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(74, 120)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(835, 352)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.PictureBox1.TabIndex = 1
-        Me.PictureBox1.TabStop = False
+        Me.cbJoueurSelectionne.FormattingEnabled = True
+        Me.cbJoueurSelectionne.Location = New System.Drawing.Point(12, 12)
+        Me.cbJoueurSelectionne.Name = "cbJoueurSelectionne"
+        Me.cbJoueurSelectionne.Size = New System.Drawing.Size(224, 21)
+        Me.cbJoueurSelectionne.TabIndex = 1
         '
-        'Label1
+        'lbJoueurs
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 27.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(151, 194)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(131, 42)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "Label1"
+        Me.lbJoueurs.FormattingEnabled = True
+        Me.lbJoueurs.Location = New System.Drawing.Point(12, 39)
+        Me.lbJoueurs.Name = "lbJoueurs"
+        Me.lbJoueurs.Size = New System.Drawing.Size(224, 420)
+        Me.lbJoueurs.TabIndex = 2
         '
-        'Label2
+        'btnStats
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 27.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(429, 49)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(131, 42)
-        Me.Label2.TabIndex = 3
-        Me.Label2.Text = "Label2"
+        Me.btnStats.Location = New System.Drawing.Point(245, 12)
+        Me.btnStats.Name = "btnStats"
+        Me.btnStats.Size = New System.Drawing.Size(75, 23)
+        Me.btnStats.TabIndex = 3
+        Me.btnStats.Text = "Voir les stats"
+        Me.btnStats.UseVisualStyleBackColor = True
         '
-        'Label3
+        'btnCroissant
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 27.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(692, 208)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(131, 42)
-        Me.Label3.TabIndex = 4
-        Me.Label3.Text = "Label3"
+        Me.btnCroissant.Location = New System.Drawing.Point(242, 61)
+        Me.btnCroissant.Name = "btnCroissant"
+        Me.btnCroissant.Size = New System.Drawing.Size(75, 23)
+        Me.btnCroissant.TabIndex = 4
+        Me.btnCroissant.Text = "Croissant"
+        Me.btnCroissant.UseVisualStyleBackColor = True
+        '
+        'btnDecroissant
+        '
+        Me.btnDecroissant.Location = New System.Drawing.Point(242, 90)
+        Me.btnDecroissant.Name = "btnDecroissant"
+        Me.btnDecroissant.Size = New System.Drawing.Size(75, 23)
+        Me.btnDecroissant.TabIndex = 5
+        Me.btnDecroissant.Text = "Décroissant"
+        Me.btnDecroissant.UseVisualStyleBackColor = True
         '
         'FormScores
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(982, 592)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.PictureBox1)
+        Me.ClientSize = New System.Drawing.Size(332, 484)
+        Me.Controls.Add(Me.btnDecroissant)
+        Me.Controls.Add(Me.btnCroissant)
+        Me.Controls.Add(Me.btnStats)
+        Me.Controls.Add(Me.lbJoueurs)
+        Me.Controls.Add(Me.cbJoueurSelectionne)
         Me.Controls.Add(Me.btnRetour)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "FormScores"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
-        Me.Text = "Podium"
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Text = "Scores des joueurs"
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents btnRetour As Button
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label3 As Label
+    Friend WithEvents cbJoueurSelectionne As ComboBox
+    Friend WithEvents lbJoueurs As ListBox
+    Friend WithEvents btnStats As Button
+    Friend WithEvents btnCroissant As Button
+    Friend WithEvents btnDecroissant As Button
 End Class

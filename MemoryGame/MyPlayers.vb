@@ -65,8 +65,8 @@ Public Class MyPlayers
         getPlayerByName(playerName).TimePlayed += time
     End Sub
 
-    Public Sub updatePlayerBestTime(playerName As String, time As Integer)
-        getPlayerByName(playerName).updateBestTime(time)
+    Public Sub updatePlayerBestTime(playerName As String, time As Integer, gameScore As Integer)
+        getPlayerByName(playerName).updateBestTime(time, gameScore)
     End Sub
 
     Public Sub updateGamesPlayed(playerName As String)
@@ -78,13 +78,34 @@ Public Class MyPlayers
     End Sub
 
     Public Sub updatePlayer(playerName As String, timePlayed As Integer, gameScore As Integer)
+        updatePlayerBestTime(playerName, timePlayed, gameScore)
+        updateBestScore(playerName, gameScore)
         updatePlayerPlayedTime(playerName, timePlayed)
         updateGamesPlayed(playerName)
-        updateBestScore(playerName, gameScore)
-
-        If gameScore = FormCards.CARD_NUMBER Then
-            updatePlayerBestTime(playerName, timePlayed)
-        End If
         Me.Save()
     End Sub
+
+    Friend Function sortedPlayers(asc As Boolean) As ArrayList
+        Dim sorted As List(Of Player) = Players
+        sorted.Sort(Function(x As Player, y As Player)
+                        Dim comp = y.BestScore.CompareTo(x.BestScore)
+                        If comp <> 0 Then
+                            Return comp
+                        Else
+                            Return x.BestTime.CompareTo(y.BestTime)
+                        End If
+                    End Function)
+
+        Dim names As New ArrayList()
+        For Each player In sorted
+            names.Add(player.Name)
+        Next
+
+        If asc Then
+            Return names
+        End If
+
+        names.Reverse()
+        Return names
+    End Function
 End Class

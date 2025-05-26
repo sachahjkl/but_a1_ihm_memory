@@ -6,7 +6,9 @@ Public Class Player
     Private _gamesPlayed As Integer
     Private _timePlayed As Integer
 
+
     Public Sub New()
+        _bestScore = 0
         _bestTime = 0
         _gamesPlayed = 0
         _timePlayed = 0
@@ -61,15 +63,17 @@ Public Class Player
         End Set
     End Property
 
-    Public Sub updateBestTime(time As Integer)
+    Public Sub updateBestTime(time As Integer, score As Integer)
         If BestTime = 0 Then
             BestTime = time
             Return
         End If
 
-        If time < BestTime Then
+        If (time < BestTime And score >= BestScore) Or (score > BestScore And time > BestTime) Then
             BestTime = time
         End If
+
+
     End Sub
 
     Public Sub updateBestScore(gameScore As Integer)

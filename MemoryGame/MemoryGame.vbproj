@@ -49,7 +49,8 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>program_icon.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -155,40 +156,42 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="assets\BackCard.png">
+    <Content Include="assets\cards_balatro\BackCard.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="assets\cards_alice\Card0.png">
+    <Content Include="assets\cards_balatro\Card01.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="assets\cards_alice\Card1.png">
+    <Content Include="assets\cards_balatro\Card02.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="assets\cards_alice\Card2.png">
+    <Content Include="assets\cards_balatro\Card03.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="assets\cards_alice\Card3.png">
+    <Content Include="assets\cards_balatro\Card04.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="assets\cards_alice\Card4.png">
+    <Content Include="assets\cards_balatro\Card05.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="assets\cards_brainrot\CardBC.png">
+    <Content Include="assets\cards_skyrim\BackCard.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="assets\cards_brainrot\CardBP.png">
+    <Content Include="assets\cards_skyrim\Card01.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="assets\cards_brainrot\CardCP.png">
+    <Content Include="assets\cards_skyrim\Card02.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="assets\cards_brainrot\CardTS.png">
+    <Content Include="assets\cards_skyrim\Card03.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="assets\cards_brainrot\CardTT.png">
+    <Content Include="assets\cards_skyrim\Card04.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="program_icon.ico" />
+    <Content Include="assets\cards_skyrim\Card05.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
