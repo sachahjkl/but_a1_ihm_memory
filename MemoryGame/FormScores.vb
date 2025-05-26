@@ -25,7 +25,7 @@
     End Sub
 
     Private Sub btnStats_Click(sender As Object, e As EventArgs) Handles btnStats.Click
-        If lbJoueurs.SelectedIndex = -1 Or Not lbJoueurs.Items.Contains(cbJoueurSelectionne.Text) Then
+        If Not MyPlayers.Instance.PlayerNames.Contains(cbJoueurSelectionne.Text) Then
             MsgBox("Veuillez selectionner un joueur avant d'appuyer sur ce bouton.", MsgBoxStyle.OkOnly)
             Return
         End If
@@ -43,7 +43,7 @@
 
         Dim hmsJoue = hJoue & ":" & mJoue & ":" & sJoue
 
-        MsgBox(cbJoueurSelectionne.Text & vbCrLf &
+        MsgBox(nom & vbCrLf &
                "Parties jouées : " & partiesJouees & vbCrLf &
                "Temps joué : " & hmsJoue & vbCrLf &
                "Meilleur score : " & meilleurScore & vbCrLf &
