@@ -1,0 +1,37 @@
+name: Build and Release VB.NET Application
+
+on:
+  push:
+    branches:
+      - main  # or your default branch name
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v1.1.2
+
+    - name: Restore NuGet packages
+      run: nuget restore
+
+    - name: Build Solution
+      run: msbuild /p:Configuration=Release /p:Platform="Any CPU" /p:OutputPath="$(Build.ArtifactStagingDirectory)"
+
+    - name: Create Release
+      id: create_release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: |
+          $(Build.ArtifactStagingDirectory)/*.exe
+          $(Build.ArtifactStagingDirectory)/*.dll
+        tag_name: v${{ github.run_number }}
+        name: Release v${{ github.run_number }}
+        body: |
+          Release v${{ github.run_number }}
+          Built from commit: ${{ github.sha }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
