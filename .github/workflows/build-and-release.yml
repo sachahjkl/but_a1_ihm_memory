@@ -21,12 +21,16 @@ jobs:
     - name: Build Solution
       run: msbuild /p:Configuration=Release /p:Platform="Any CPU" /p:OutputPath="bin/Release"
 
+    - name: Create ZIP file
+      shell: pwsh
+      run: |
+        Compress-Archive -Path "./MemoryGame/bin/Release/*" -DestinationPath "MemoryGame-${{ github.sha }}.zip" -Force
+
     - name: Create Release
       id: create_release
       uses: softprops/action-gh-release@v1
       with:
-        files: |
-          **/bin/Release/**
+        files: MemoryGame-${{ github.sha }}.zip
         tag_name: v${{ github.run_number }}
         name: Release v${{ github.run_number }}
         body: |
